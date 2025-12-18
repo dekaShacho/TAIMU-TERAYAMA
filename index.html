@@ -1,0 +1,458 @@
+<!-- filename: index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI / DX サミット in 大阪 2026</title>
+    <!-- Prevent 404 for favicon -->
+    <link rel="icon" href="data:,">
+    
+    <!-- 1. Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Font Awesome (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- 3. Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- 4. Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['"Noto Sans JP"', 'sans-serif'],
+              },
+              animation: {
+                float: 'float 6s ease-in-out infinite',
+                pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              },
+              keyframes: {
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                }
+              }
+            }
+          }
+        }
+    </script>
+    
+    <!-- 5. Custom CSS -->
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Hero Background Pattern */
+        .hero-bg {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        /* Text Decoration Circle */
+        .circle-text {
+            position: relative;
+            display: inline-block;
+        }
+        .circle-text::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -5px;
+            left: -10px;
+            right: -10px;
+            bottom: -5px;
+            background: #fff7ed; /* Orange-50 */
+            border-radius: 9999px;
+            transform: rotate(-2deg);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
+  }
+}
+</script>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="font-black text-xl tracking-tighter text-slate-900">
+                    AI/DX SUMMIT <span class="text-blue-600">2026</span>
+                </span>
+            </div>
+            <a href="#register" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-2 rounded-full transition shadow-lg shadow-blue-500/30">
+                チケットを予約する
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-screen flex items-center justify-center pt-24 pb-16 relative overflow-hidden">
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    
+                    <!-- Left Content -->
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-1.5 rounded-full mb-6">
+                            <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                            <span class="text-blue-700 font-bold text-sm">大阪開催決定！先行エントリー受付中</span>
+                        </div>
+                        
+                        <h1 class="text-4xl lg:text-6xl font-black leading-tight mb-6 text-slate-900">
+                            業務改善の<br>
+                            <span class="gradient-text">新しいスタンダード</span>の<br>
+                            輪に入ろう。
+                        </h1>
+                        
+                        <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                            Larkの登場で、「業務改善」の定義が変わり始めています。<br>
+                            まだ多くの人が気づいていない今だからこそ、<br>
+                            <span class="font-bold text-slate-900 bg-yellow-200 px-1">先行者利益</span>をつかむチャンスがある。<br>
+                            <br>
+                            Entimeたいむと5人の実践者が、<br>
+                            その可能性と「ワクワクする未来」をシェアします。
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                            <a href="#register" class="bg-slate-900 hover:bg-slate-800 text-white text-lg font-bold px-8 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                                サミットに参加する
+                                <i class="fas fa-arrow-right text-sm"></i>
+                            </a>
+                            <a href="#about" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold px-8 py-4 rounded-xl transition flex items-center justify-center">
+                                詳しく見る
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual -->
+                    <div class="lg:w-1/2 relative">
+                        <!-- Blob shape background -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-tr from-blue-200/50 to-purple-200/50 rounded-full blur-3xl -z-10"></div>
+                        
+                        <div class="relative bg-white p-2 rounded-3xl shadow-2xl rotate-2 hover:rotate-0 transition duration-500">
+                            <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative">
+                                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" alt="イベントの雰囲気" class="w-full h-full object-cover">
+                                
+                                <!-- Overlays -->
+                                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow-lg flex items-center gap-2">
+                                    <i class="fas fa-user-circle text-blue-500 text-xl"></i>
+                                    <p class="font-bold text-slate-800 text-sm">Lark研究所 たいむ</p>
+                                </div>
+                                <div class="absolute top-4 right-4 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg animate-float">
+                                    + 5 Special Guests
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl text-center">
+                <h2 class="text-3xl font-black mb-12 text-slate-900">
+                    Larkで<span class="circle-text text-blue-600">業務改善</span>を仕事にする。<br>
+                    そんな未来が、もう来ています。
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 text-left items-center">
+                    <div class="space-y-6 text-slate-600 text-lg">
+                        <p>
+                            「Larkを入れたけど、使いこなせていない」<br>
+                            そんな企業が今、日本中に溢れています。
+                        </p>
+                        <p>
+                            これは裏を返せば、<br>
+                            <strong class="text-slate-900 underline decoration-orange-400 decoration-4 underline-offset-4">「Larkで業務を整理できる人」</strong>の価値が<br>
+                            爆上がりしているということ。
+                        </p>
+                        <p>
+                            ただの設定代行ではありません。<br>
+                            チームの働き方を変え、ムダを無くし、<br>
+                            みんなが笑顔で働ける環境をつくる。<br>
+                            そんなクリエイティブな「業務改善」の領域が広がっています。
+                        </p>
+                    </div>
+                    <div class="bg-blue-50 p-8 rounded-2xl relative">
+                        <i class="fas fa-quote-left text-4xl text-blue-200 absolute top-4 left-4"></i>
+                        <p class="font-bold text-xl text-slate-800 mb-4 relative z-10">
+                            まだプレイヤーが少ない今だからこそ、<br>
+                            いち早くこの領域に飛び込んでほしい。<br>
+                            一緒に市場を作っていく仲間が必要です。
+                        </p>
+                        <div class="flex items-center gap-3 mt-6">
+                            <div class="w-10 h-10 rounded-full bg-slate-300 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover" alt="たいむ">
+                            </div>
+                            <div class="text-sm">
+                                <p class="font-bold text-slate-900">たいむ (寺山 大夢)</p>
+                                <p class="text-slate-500">株式会社Entime 代表</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guests Section -->
+        <section class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black mb-4 text-slate-900">その「輪」の中にいるのは、<br>こんな人たちです。</h2>
+                    <p class="text-slate-600">今回のサミットに登壇する、5人の先駆者たち。</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- Guest 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" class="w-full h-full object-cover" alt="Aさん">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-orange-500 bg-orange-50 px-2 py-0.5 rounded-full inline-block mb-1">
+                                    EC × 業務改善
+                                </p>
+                                <h3 class="font-bold text-lg text-slate-900">Aさん</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            在庫管理の悩みをLarkで解決したら、お店の売上が自然と伸びました。バックオフィスの整理が攻めの経営に繋がることを実感しています。
+                        </p>
+                    </div>
+
+                    <!-- Guest 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover" alt="Bさん">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-blue-500 bg-blue-50 px-2 py-0.5 rounded-full inline-block mb-1">
+                                    フリーランス
+                                </p>
+                                <h3 class="font-bold text-lg text-slate-900">Bさん</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            未経験からLark構築を始めました。お客様と一緒に業務フローを考える時間が何より楽しい。感謝されながら報酬をいただける最高の仕事です。
+                        </p>
+                    </div>
+
+                    <!-- Guest 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover" alt="Cさん">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-purple-500 bg-purple-50 px-2 py-0.5 rounded-full inline-block mb-1">
+                                    コミュニティ
+                                </p>
+                                <h3 class="font-bold text-lg text-slate-900">Cさん</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            人が集まる場所をLarkで管理。事務作業を自動化して、コミュニケーションの質を高めることに注力できました。
+                        </p>
+                    </div>
+
+                    <!-- Guest 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop" class="w-full h-full object-cover" alt="Dさん">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-green-500 bg-green-50 px-2 py-0.5 rounded-full inline-block mb-1">
+                                    営業DX
+                                </p>
+                                <h3 class="font-bold text-lg text-slate-900">Dさん</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            営業マンが入力したくないSFAを卒業。LarkならスマホからLINE感覚で報告完了。現場が喜ぶDXの形を見つけました。
+                        </p>
+                    </div>
+
+                    <!-- Guest 5 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-xl transition group">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden border-2 border-white shadow-md flex-shrink-0">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" class="w-full h-full object-cover" alt="Eさん">
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-pink-500 bg-pink-50 px-2 py-0.5 rounded-full inline-block mb-1">
+                                    スクール運営
+                                </p>
+                                <h3 class="font-bold text-lg text-slate-900">Eさん</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            保護者との連絡も生徒管理もLark一つで。空いた時間で教育の質を高めることに集中できています。
+                        </p>
+                    </div>
+
+                    <!-- Join Card -->
+                    <div class="bg-slate-900 rounded-2xl p-6 flex flex-col items-center justify-center text-center text-white shadow-xl transform scale-105 border-2 border-blue-500">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl mb-4 animate-bounce">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-2">次は、あなたです。</h3>
+                        <p class="text-slate-300 text-sm mb-4">
+                            この輪に入って、<br>一緒にノウハウを共有しませんか？
+                        </p>
+                        <a href="#register" class="text-blue-400 font-bold hover:text-blue-300 text-sm border-b border-blue-400 pb-0.5">
+                            サミットに参加する
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Info Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100">
+                    <div class="text-center mb-10">
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900">開催概要</h2>
+                        <p class="text-slate-500 mt-2">AI / DX サミット in 大阪 2026</p>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-32 shrink-0">
+                                <span class="block font-bold text-slate-400 uppercase text-sm tracking-wider">Date</span>
+                            </div>
+                            <div>
+                                <p class="text-xl font-bold text-slate-900">2026年11月22日（日）</p>
+                                <p class="text-slate-600">13:00 開場 / 13:30 スタート / 18:00 終了予定</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-32 shrink-0">
+                                <span class="block font-bold text-slate-400 uppercase text-sm tracking-wider">Place</span>
+                            </div>
+                            <div>
+                                <p class="text-xl font-bold text-slate-900">グランフロント大阪 ナレッジキャピタル（予定）</p>
+                                <a href="#" class="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center mt-1">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    Google Mapで見る
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col md:flex-row gap-6 items-start">
+                            <div class="w-full md:w-32 shrink-0">
+                                <span class="block font-bold text-slate-400 uppercase text-sm tracking-wider">Contents</span>
+                            </div>
+                            <div class="w-full">
+                                <ul class="space-y-4">
+                                    <li class="flex items-center gap-4 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                                        <span class="font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded text-sm">Talk</span>
+                                        <span class="text-slate-800 font-medium">5人のゲストによるLark活用・収益化事例</span>
+                                    </li>
+                                    <li class="flex items-center gap-4 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                                        <span class="font-bold text-orange-600 bg-orange-50 px-3 py-1 rounded text-sm">Work</span>
+                                        <span class="text-slate-800 font-medium">明日から使える「業務改善」ワークショップ</span>
+                                    </li>
+                                    <li class="flex items-center gap-4 bg-white p-3 rounded-lg border border-slate-100 shadow-sm">
+                                        <span class="font-bold text-green-600 bg-green-50 px-3 py-1 rounded text-sm">Meet</span>
+                                        <span class="text-slate-800 font-medium">登壇者・参加者との交流＆仲間づくり</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="register" class="py-24 bg-gradient-to-br from-blue-600 to-slate-900 text-white relative overflow-hidden">
+            <!-- Background Texture -->
+            <div 
+                class="absolute top-0 left-0 w-full h-full opacity-10"
+                style="background-image: url('https://www.transparenttextures.com/patterns/cubes.png')"
+            ></div>
+            
+            <div class="container mx-auto px-4 text-center relative z-10 max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">
+                    一人で悩むのは、<br>もう終わりにしませんか？
+                </h2>
+                <p class="text-lg md:text-xl text-blue-100 mb-12 leading-relaxed">
+                    ここには、同じ方向を向く仲間がいます。<br>
+                    最先端のノウハウがあります。<br>
+                    <br>
+                    Larkという共通言語で繋がるこの「輪」に入って、<br>
+                    あなたのビジネスとキャリアを、もっと面白くしましょう。
+                </p>
+
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 shadow-2xl">
+                    <p class="font-bold text-xl mb-2">先行者利益を掴むチケット</p>
+                    <div class="text-4xl font-black mb-8 tracking-wide">Coming Soon</div>
+                    
+                    <button 
+                        onclick="alert('デモ：申し込みフォームへ移動します')"
+                        class="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-bold text-xl py-5 rounded-full shadow-lg shadow-orange-500/30 transition transform hover:scale-105 flex items-center justify-center gap-3"
+                    >
+                        サミットの席を確保する
+                        <i class="fas fa-ticket-alt"></i>
+                    </button>
+                    <p class="mt-4 text-sm text-blue-200">※定員になり次第、受付を終了します</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-500 py-10 text-center border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="mb-6">
+                <span class="font-bold text-white text-lg">株式会社Entime</span>
+                <p class="text-sm mt-1">「面倒くさい」を解消し、人が本来の仕事に熱狂できる世界へ。</p>
+            </div>
+            <div class="flex justify-center gap-6 text-2xl mb-8">
+                <a href="#" class="hover:text-white transition" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="hover:text-white transition" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="hover:text-white transition" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <p class="text-xs">© 2026 Entime Inc. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Execution Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('AI/DX Summit App Loaded Successfully');
+            // Additional interactions can be added here safely
+        });
+    </script>
+</body>
+</html>
